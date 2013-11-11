@@ -25,7 +25,7 @@ NSLocalizedStringFromTableInBundle(key, @"NSDateTimeAgo", [NSBundle bundleWithPa
     }
     else if(deltaSeconds < 60)
     {
-        return [self stringFromFormat:@"%%d %@s" withValue:deltaSeconds];
+        return [self stringFromFormat:@"%%d%@s" withValue:deltaSeconds];
     }
     else if(deltaSeconds < 120)
     {
@@ -33,7 +33,7 @@ NSLocalizedStringFromTableInBundle(key, @"NSDateTimeAgo", [NSBundle bundleWithPa
     }
     else if (deltaMinutes < 60)
     {
-        return [self stringFromFormat:@"%%d %@m" withValue:deltaMinutes];
+        return [self stringFromFormat:@"%%d%@m" withValue:deltaMinutes];
     }
     else if (deltaMinutes < 120)
     {
@@ -42,7 +42,7 @@ NSLocalizedStringFromTableInBundle(key, @"NSDateTimeAgo", [NSBundle bundleWithPa
     else if (deltaMinutes < (24 * 60))
     {
         minutes = (int)floor(deltaMinutes/60);
-        return [self stringFromFormat:@"%%d %@h" withValue:minutes];
+        return [self stringFromFormat:@"%%d%@h" withValue:minutes];
     }
     else if (deltaMinutes < (24 * 60 * 2))
     {
@@ -51,7 +51,7 @@ NSLocalizedStringFromTableInBundle(key, @"NSDateTimeAgo", [NSBundle bundleWithPa
     else if (deltaMinutes < (24 * 60 * 7))
     {
         minutes = (int)floor(deltaMinutes/(60 * 24));
-        return [self stringFromFormat:@"%%d %@d" withValue:minutes];
+        return [self stringFromFormat:@"%%d%@d" withValue:minutes];
     }
     else if (deltaMinutes < (24 * 60 * 14))
     {
@@ -60,7 +60,7 @@ NSLocalizedStringFromTableInBundle(key, @"NSDateTimeAgo", [NSBundle bundleWithPa
     else if (deltaMinutes < (24 * 60 * 31))
     {
         minutes = (int)floor(deltaMinutes/(60 * 24 * 7));
-        return [self stringFromFormat:@"%%d %@w" withValue:minutes];
+        return [self stringFromFormat:@"%%d%@w" withValue:minutes];
     }
     else if (deltaMinutes < (24 * 60 * 61))
     {
@@ -69,7 +69,7 @@ NSLocalizedStringFromTableInBundle(key, @"NSDateTimeAgo", [NSBundle bundleWithPa
     else if (deltaMinutes < (24 * 60 * 365.25))
     {
         minutes = (int)floor(deltaMinutes/(60 * 24 * 30));
-        return [self stringFromFormat:@"%%d %@m" withValue:minutes];
+        return [self stringFromFormat:@"%%d%@m" withValue:minutes];
     }
     else if (deltaMinutes < (24 * 60 * 731))
     {
@@ -77,7 +77,7 @@ NSLocalizedStringFromTableInBundle(key, @"NSDateTimeAgo", [NSBundle bundleWithPa
     }
     
     minutes = (int)floor(deltaMinutes/(60 * 24 * 365));
-    return [self stringFromFormat:@"%%d %@y" withValue:minutes];
+    return [self stringFromFormat:@"%%d%@y" withValue:minutes];
 }
 
 // Similar to timeAgo, but only returns "
